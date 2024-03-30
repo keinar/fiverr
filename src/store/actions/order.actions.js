@@ -1,8 +1,8 @@
 import { store } from '../store.js'
 import * as actions from '../reducers/order.reducer.js'
 import {ADD_ORDER, SET_ORDERS, UPDATE_ORDER} from "../reducers/order.reducer.js";
-import { orderService } from '../../services/order.service.local.js'
-import {sellerOrderService} from '../../services/sellerOrder.service.local.js'
+import { orderService } from '../../services/order.service.js'
+import {sellerOrderService} from '../../services/sellerOrder.service.js'
 
 export async function saveOrder(orderToSave) {
     // store.dispatch({ type: SET_IS_LOADING, isLoading: true })
@@ -27,6 +27,7 @@ export async function loadOrders(isSeller = false) {
     let orders;
     if (isSeller) {
       orders = await sellerOrderService.query(filterBy);
+      console.log('seeeeleer',orders)
     } else {
       orders = await orderService.query(filterBy);
     }

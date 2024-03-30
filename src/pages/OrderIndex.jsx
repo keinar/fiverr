@@ -79,7 +79,7 @@ export function OrderIndex() {
                     <div className="order-data">
                       <div className="order">
                         <h3>Order no.</h3>
-                        <h3># {order.gig._id} </h3>
+                        <h3># {order._id} </h3>
                       </div>
                       <div className="order">
                         <h3>Delivery time</h3>

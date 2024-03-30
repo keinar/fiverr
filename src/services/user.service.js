@@ -1,7 +1,20 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
-const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+ const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+
+import Axios from 'axios'
+
+var axios = Axios.create({
+    withCredentials: true,
+})
+
+const BASE_URL = (process.env.NODE_ENV !== 'development') ?
+    '/api/' :
+    '//localhost:3031/api/'
+const BASE_USER_URL = BASE_URL + 'user/'
+const BASE_AUTH_URL = BASE_URL + 'auth/'
+
 
 export const userService = {
     login,
@@ -13,21 +26,32 @@ export const userService = {
     getById,
     remove,
     update,
+    getEmptyUser,
 }
 
 window.userService = userService
 
 
-function getUsers() {
-    return storageService.query('user')
+async function getUsers() {
+    // return storageService.query('user')
     // return httpService.get(`user`)
+    var { data: users } = await axios.get(BASE_USER_URL)     
+    return users
 }
 
 
-
+function getEmptyUser() {
+    return {
+        username: '',
+        fullname: '',
+        password: '',
+        imgUrl: '',
+    }
+}
 async function getById(userId) {
-    const user = await storageService.get('user', userId)
+    // const user = await storageService.get('user', userId)
     // const user = await httpService.get(`user/${userId}`)
+    var { data: user } = await axios.get(BASE_USER_URL + `${userId}`,)  
     return user
 }
 
@@ -44,23 +68,27 @@ async function update({ _id }) {
 }
 
 async function login(userCred) {
-    const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
-    // const user = await httpService.post('auth/login', userCred)
-    if (user) return saveLocalUser(user)
+    // const users = await storageService.query('user')
+    // const user = users.find(user => user.username === userCred.username)
+    const { data: user } = await axios.post(BASE_AUTH_URL + 'login', userCred)    
+    if (user) {
+        return saveLocalUser(user)
+    }
 }
 
 async function signup(userCred) {
-    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    userCred.score = 10000
-    const user = await storageService.post('user', userCred)
-    // const user = await httpService.post('auth/signup', userCred)
+    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'    
+    // const user = await storageService.post('user', userCred)
+    const { data: user } = await axios.post(BASE_AUTH_URL + 'signup', userCred)
     return saveLocalUser(user)
+    // const user = await httpService.post('auth/signup', userCred)
+    
 }
 
 async function logout() {
+    // sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+    await axios.post(BASE_AUTH_URL + 'logout')
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    // return await httpService.post('auth/logout')
 }
 
 

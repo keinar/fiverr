@@ -4,6 +4,7 @@ import { loadOrders } from "../store/actions/order.actions.js"
 import { SellerOrdersList } from "../cmps/SellerOrderList.jsx"
 import { useState } from "react"
 
+
 export function UserProfile() {
 
   const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -17,6 +18,7 @@ export function UserProfile() {
           setUser(user); 
           loadOrders(true); 
         })
+      // loadOrders(true)
         .catch(error => {
           console.error('Error fetching user details:', error);          
         })

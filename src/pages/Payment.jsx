@@ -4,7 +4,6 @@ import cardsImg from "../assets/imgs/credit-cards-68469259.svg"
 import check from "../assets/imgs/check.svg"
 import { useParams } from "react-router"
 import { useNavigate } from "react-router"
-import { orderService } from "../services/order.service.local"
 import { saveOrder } from "../store/actions/order.actions"
 
 export default function Payment() {
@@ -34,11 +33,11 @@ export default function Payment() {
 
       // Constructing the order object
       const order = {
-        buyer: {
-          _id: buyerDetails._id,
-          fullname: buyerDetails.fullname,
-          imgUrl: buyerDetails.imgUrl,
-        },
+        // buyer: {
+        //   _id: buyerDetails._id,
+        //   fullname: buyerDetails.fullname,
+        //   imgUrl: buyerDetails.imgUrl,
+        // },
         seller: {
           _id: gig.owner._id,
           fullname: gig.owner.fullname,
