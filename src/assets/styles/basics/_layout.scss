@@ -91,6 +91,11 @@
     gap: 3.125rem;
 
     .gigs-column {
+
+      .user-details-layout p{
+        padding-top: 50px;
+      }
+
       .manage-orders {
         display: flex;
         flex-direction: column;
