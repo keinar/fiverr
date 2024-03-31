@@ -43,6 +43,26 @@ export function UserProfile() {
                   <h3>@{user.username}</h3>
                 </div>
               </div>
+              <div className="user-further-info">
+                <ul>
+                  <li>
+                    From
+                    <p>{user.country}</p>
+                  </li>
+                  <li>
+                    Member Since
+                    <p>{user.joined}</p>
+                  </li>
+                  <li>
+                    Avg. Response Time
+                    <p>{user.responseTime}</p>
+                  </li>
+                  <li>
+                    Last Delivery
+                    <p>{user.lastDelivery}</p>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="desc-card">
 

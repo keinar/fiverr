@@ -1,14 +1,10 @@
 @media (min-width : 600px) {
 
-    .navbar{
-        margin-left: 50px;
-    }
-
     .main-container{
-        display: flex;
+        // display: flex;
         .user-details-container {
             gap: 6.25rem;
-            margin: 40px;
+            margin-top: 40px;
           
             .details-container {
               flex-direction: column;
@@ -36,6 +32,11 @@
                       font-weight: 600;
                     }
                   }
+
+                  .order-list{
+                    border: 0.5px solid #dadbdd;
+
+                  }
                 }
               }
           
@@ -45,7 +46,7 @@
                   width: 100%;
                   flex-direction: row;
                   position: relative;
-                  border: 1px solid #dadbdd;
+                  border: 0.5px solid #dadbdd;
                   padding: 1.875rem;
                   margin-block-start: 3.125rem;
                   font-size: .875rem;
@@ -64,13 +65,28 @@
 
                     display: flex;
                     flex-direction: column;
+                    margin-bottom: 30px;
+                    padding-bottom: 1.875rem;
                     gap: 1.25rem;
                     align-items: center;
+                    border-bottom: 0.5px solid #dadbdd;
                     .user-img img{
                       border-radius: 50%;
                       width: 150px;
                       height: 150px;
                       object-fit: cover;
+                    }
+                  }
+
+                  .user-further-info{
+                    ul{
+                      padding: 0px;
+                      margin-bottom: 0px;
+                      li{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                      }
                     }
                   }
                   .user-profile-label{
@@ -90,6 +106,7 @@
 
 @media (min-width : 900px) {
 
+  .main-container{
     .user-details-container {
         gap: 6.25rem;
         margin-top: 40px;
@@ -157,5 +174,8 @@
           }
         }
       }
+
+  }
+
   
 }
