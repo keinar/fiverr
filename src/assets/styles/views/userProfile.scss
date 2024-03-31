@@ -1,0 +1,161 @@
+@media (min-width : 600px) {
+
+    .navbar{
+        margin-left: 50px;
+    }
+
+    .main-container{
+        display: flex;
+        .user-details-container {
+            gap: 6.25rem;
+            margin: 40px;
+          
+            .details-container {
+              flex-direction: column;
+              display: flex;
+              gap: 3.125rem;
+              align-items: center;
+          
+              .gigs-column {
+          
+                .user-details-layout p{
+                  padding-top: 35px;
+                }
+          
+                .manage-orders {
+                  display: flex;
+                  flex-direction: column;
+          
+                  .order-header {
+                    align-items: baseline;
+                    padding-block-end: 14px;
+                    justify-content: space-between;
+          
+                    h1{
+                      font-size: 18px;
+                      font-weight: 600;
+                    }
+                  }
+                }
+              }
+          
+              .user-details {
+                width: 100%;
+                .user-card {
+                  width: 100%;
+                  flex-direction: row;
+                  position: relative;
+                  border: 1px solid #dadbdd;
+                  padding: 1.875rem;
+                  margin-block-start: 3.125rem;
+                  font-size: .875rem;
+                  line-height: 130%;
+                  background-color: #fff;
+
+                  h2{
+                    color: black;
+                  }
+
+                  h3{
+                    color: #62646a;
+                  }
+          
+                  .user-profile-info{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.25rem;
+                    align-items: center;
+                    .user-img img{
+                      border-radius: 50%;
+                      width: 150px;
+                      height: 150px;
+                      object-fit: cover;
+                    }
+                  }
+                  .user-profile-label{
+                    display: flex;
+              flex-direction: column;
+              align-items: center;
+                  }
+                }
+              }
+            }
+          }
+
+    }
+
+    
+}
+
+@media (min-width : 900px) {
+
+    .user-details-container {
+        gap: 6.25rem;
+        margin-top: 40px;
+      
+        .details-container {
+          flex-direction: row;
+          display: flex;
+          gap: 3.125rem;
+      
+          .gigs-column {
+      
+            .user-details-layout p{
+              padding-top: 50px;
+            }
+      
+            .manage-orders {
+              display: flex;
+              flex-direction: column;
+      
+              .order-header {
+                align-items: baseline;
+                padding-block-end: 14px;
+                justify-content: space-between;
+      
+                h1{
+                  font-size: 18px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+      
+          .user-details {
+            .user-card {
+              flex-direction: row;
+              width: 25rem;
+              position: relative;
+              border: 1px solid #dadbdd;
+              padding: 1.875rem;
+              margin-block-start: 3.125rem;
+              min-width: 300px;
+              font-size: .875rem;
+              line-height: 130%;
+              color: #62646a;
+              background-color: #fff;
+      
+              .user-profile-info{
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+                align-items: center;
+                .user-img img{
+                  border-radius: 50%;
+                  width: 150px;
+                  height: 150px;
+                  object-fit: cover;
+                }
+              }
+              .user-profile-label{
+                display: flex;
+          flex-direction: column;
+          align-items: center;
+              }
+            }
+          }
+        }
+      }
+  
+}
