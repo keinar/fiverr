@@ -4,10 +4,17 @@ import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 
+import Axios from 'axios'
 
+var axios = Axios.create({
+    withCredentials: true,
+})
+const BASE_URL = (process.env.NODE_ENV !== 'development') ?
+    '/api/order/seller' :
+    '//localhost:3031/api/order/seller'
 const STORAGE_KEY = 'order'
 
-export const orderService = {
+export const sellerOrderService = {
     query,
     getById,
     save,
@@ -15,11 +22,13 @@ export const orderService = {
     getEmptyOrder,
     addOrderMsg
 }
-window.cs = orderService
+window.cs = sellerOrderService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    return httpService.get(STORAGE_KEY, filterBy)
+async function query() {
+    // return httpService.get(STORAGE_KEY, filterBy)
+    var { data: orders } = await axios.get(BASE_URL) 
+    return orders
 }
 
 function getById(orderId) {

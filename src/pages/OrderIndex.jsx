@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 import { loadOrders } from "../store/actions/order.actions.js"
 // import { GigFilter } from "../cmps/GigFilter.jsx"
 // import { useSearchParams } from "react-router-dom"
-// import { gigService } from "../services/gig.service.local.js"
 import { store } from "../store/store.js"
 import { Link } from "react-router-dom"
 
@@ -80,7 +79,7 @@ export function OrderIndex() {
                     <div className="order-data">
                       <div className="order">
                         <h3>Order no.</h3>
-                        <h3># {order.gig._id} </h3>
+                        <h3># {order._id} </h3>
                       </div>
                       <div className="order">
                         <h3>Delivery time</h3>

@@ -19,7 +19,8 @@
 
 
         const handleOrderFulfilled = (order) => {
-            const updatedOrder = { ...order, status: 'approved' };
+            const updatedOrder = { ...order, status: 'approved' }
+            
             saveOrder(updatedOrder);
         }
 

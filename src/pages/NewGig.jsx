@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Label } from "@mui/icons-material"
-import { gigService, gigCategories } from "../services/gig.service.local"
+import { gigService, gigCategories } from "../services/gig.service.js"
 import { saveGig } from "../store/actions/gig.actions.js"
 import { useNavigate } from "react-router"
 

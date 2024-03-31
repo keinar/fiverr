@@ -9,7 +9,7 @@ import Breadcrumbs from "../../cmps/Breadcrumbs.jsx"
 import GigReviews from "./GigReviews.jsx"
 import AboutSeller from "./AboutSeller.jsx"
 import AboutSellerTop from "./AboutSellerTop.jsx"
-import { gigService } from "../../services/gig.service.local.js"
+import { gigService } from "../../services/gig.service.js"
 
 export function GigDetails() {
   const params = useParams()

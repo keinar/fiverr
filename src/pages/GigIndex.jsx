@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { GigList } from "../cmps/GigList.jsx"
 import { loadGigs, setFilterBy } from "../store/actions/gig.actions.js"
 import { useSearchParams } from "react-router-dom"
-import { gigService } from "../services/gig.service.local.js"
+import { gigService } from "../services/gig.service.js"
 import { store } from "../store/store.js"
 import Breadcrumbs from "../cmps/Breadcrumbs.jsx"
 
@@ -31,7 +31,7 @@ export function GigIndex() {
 
         <h1 className="category-header"> {filterBy?.tags && filterBy.tags.length === 0 ? "Explore" : filterBy?.tags}</h1>
         <div className="top-of-gigs">
-          <div className="number-of-results">(Counter from service)Num of services available</div>
+          <div className="number-of-results">(Counter 1 from service)Num of services available</div>
           <label className="sort-container">
             <span className="sort-title">Add Filter Sort by:</span>
             <span className="drop-down-btn">Recommended</span>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { userService } from "../../services/user.service.local.js"
+import { userService } from "../../services/user.service.js"
 import { useSelector } from "react-redux"
 import { loadUsers } from "../../store/actions/user.actions.js"
 import { ImgUploader } from "../ImgUploader.jsx"

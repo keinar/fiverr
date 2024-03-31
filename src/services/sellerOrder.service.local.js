@@ -18,7 +18,7 @@ export const sellerOrderService = {
 }
 window.cs = sellerOrderService
 
-_createOrders()
+//_createOrders()
 async function query(filterBy = {}) {
   const orders = await storageService.query(STORAGE_KEY);
   let ordersToReturn = [...orders];
@@ -141,42 +141,42 @@ function getEmptyOrder() {
 }
 
 // TEST DATA
-function _createOrders() {
-  let orders = utilService.loadFromStorage(STORAGE_KEY)
-  if (!orders || !orders.length) {
-    orders = [
-      {
-        "_id": "o1225",
-        "buyer": {
-              "_id": "u103",
-              "fullname": "user3",
-              "imgUrl": "/img/img3.jpg"
-            },
-        "seller": {
-              "_id": "u104",
-              "fullname": "user4",
-              "imgUrl": "/img/img4.jpg"
-            },
-        "gig": {
-          "_id": "i101",
-          "tags": "Design Logo",
-          "price": 20,
-          "daysToMake": 4,
-          "packages": 'basic',
-          "title" : "I will design clean and responsive wordpress website"
-        },
-        "status": "pending"
-      },
+// function _createOrders() {
+//   let orders = utilService.loadFromStorage(STORAGE_KEY)
+//   if (!orders || !orders.length) {
+//     orders = [
+//       {
+//         "_id": "o1225",
+//         "buyer": {
+//               "_id": "u103",
+//               "fullname": "user3",
+//               "imgUrl": "/img/img3.jpg"
+//             },
+//         "seller": {
+//               "_id": "u104",
+//               "fullname": "user4",
+//               "imgUrl": "/img/img4.jpg"
+//             },
+//         "gig": {
+//           "_id": "i101",
+//           "tags": "Design Logo",
+//           "price": 20,
+//           "daysToMake": 4,
+//           "packages": 'basic',
+//           "title" : "I will design clean and responsive wordpress website"
+//         },
+//         "status": "pending"
+//       },
 
-    ]
+//     ]
     
 
    
-    utilService.saveToStorage(STORAGE_KEY, orders)
-  }
+//     utilService.saveToStorage(STORAGE_KEY, orders)
+//   }
 
 
-}
+// }
 
 
 
