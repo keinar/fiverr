@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import { useSelector } from "react-redux/es/hooks/useSelector"
-import cardsImg from "../assets/imgs/credit-cards-68469259.svg"
-import check from "../assets/imgs/check.svg"
 import { useParams } from "react-router"
 import { useNavigate } from "react-router"
 import { saveOrder } from "../store/actions/order.actions"
@@ -90,7 +88,7 @@ export default function Payment() {
             <ul className="feature-list">
               {gig.packages.basic.included.map((feature, index) => (
                 <span key={index} className="feature-container">
-                  <img className="icon check" src={check} alt="check-icon" />
+                  <img className="icon check" src="https://res.cloudinary.com/de06koxrk/image/upload/v1711916058/Lancerr/check_uniadx.svg" alt="check-icon" />
                   {feature}
                 </span>
               ))}
@@ -151,7 +149,7 @@ export default function Payment() {
               <label>
                 <input className="form-check-input radio" type="radio" name="payment-option" id="visa" />
                 <p>Credit & Debit Cards </p>
-                <img src={cardsImg} alt="cards" className="credit-card-icons" />
+                <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1711916063/Lancerr/credit-cards-68469259_i1qsi6.svg" alt="cards" className="credit-card-icons" />
               </label>
             </section>
             <form className="credit-card-details-wrapper">

@@ -1,31 +1,25 @@
 import React from "react";
-import X from "../../assets/imgs/x-logo.svg";
-import Facebook from "../../assets/imgs/facebook.svg";
-import Instagram from "../../assets/imgs/instagram.svg";
-import Linkedin from "../../assets/imgs/linkedin.svg";
-import Pinterest from "../../assets/imgs/pinterest.svg";
-import Tiktok from "../../assets/imgs/tiktok.svg";
 
 export default function SocialLinks() {
   return (
     <ul className="social">
       <li>
-        <img src={Tiktok} alt="Tiktok Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681622/Lancerr/tiktok_bg15io.svg" alt="Tiktok Logo" />
       </li>
       <li>
-        <img src={Instagram} alt="Instagram Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681618/Lancerr/instagram_ia3qtr.svg" alt="Instagram Logo" />
       </li>
       <li>
-        <img src={Linkedin} alt="Linkedin Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681618/Lancerr/linkedin_ysfswm.svg" alt="Linkedin Logo" />
       </li>
       <li>
-        <img src={Facebook} alt="Facebook Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681617/Lancerr/facebook_j6qhdf.svg" alt="Facebook Logo" />
       </li>
       <li>
-        <img src={Pinterest} alt="Pinterest Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681622/Lancerr/pinterest_jk0qb2.svg" alt="Pinterest Logo" />
       </li>
       <li>
-        <img src={X} alt="X Logo" />
+        <img src="https://res.cloudinary.com/de06koxrk/image/upload/v1710681623/Lancerr/x-logo_cmzdgp.svg" alt="X Logo" />
       </li>
     </ul>
   );
