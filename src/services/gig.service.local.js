@@ -336,7 +336,7 @@ function _createGigs() {
           "Search Engine Optimization (SEO) Services",
           "Social Media Integration and Marketing"
         ],
-        "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
+        "imgUrl": "https://scontent.fhfa1-1.fna.fbcdn.net/v/t1.6435-9/118746510_3240212262728928_1745371336448442127_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=smWJCsgOoYIAX-4mQah&_nc_ht=scontent.fhfa1-1.fna&oh=00_AfBI2HLFFk9dWzQMLrblcl_af-zNTSWag5XahTYg1bBfDg&oe=662BE9C3",
         "tags": [
           "pencil drawing",
           "realistic drawing",
