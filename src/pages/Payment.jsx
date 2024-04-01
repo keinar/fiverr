@@ -3,16 +3,18 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import { useParams } from "react-router"
 import { useNavigate } from "react-router"
 import { saveOrder } from "../store/actions/order.actions"
+import { ADD_ORDER } from "../store/reducers/order.reducer"
 
 export default function Payment() {
   const params = useParams()
   const navigate = useNavigate()
   const packageType = params.package;
-  
-
   const gig = useSelector(storeState => storeState.gigModule.gigs.find(gig => gig._id == params.gigId))
   const packageDetails = gig.packages[packageType]
-  const totalPrice = parseFloat(packageDetails.price) + 12.5;
+  const totalPrice = parseFloat(packageDetails.price) + 12.5
+
+
+
   async function onPayment() {
     try {
       // Get buyer details from session storage

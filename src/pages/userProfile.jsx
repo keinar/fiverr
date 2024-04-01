@@ -1,16 +1,24 @@
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import {  useDispatch,useSelector } from "react-redux"
 import { loadOrders } from "../store/actions/order.actions.js"
 import { SellerOrdersList } from "../cmps/SellerOrderList.jsx"
 import { useState } from "react"
-
+import { socketService, SOCKET_EVENT_NEW_ORDER } from "../services/socket.service.js"
+import {ADD_ORDER} from "../store/reducers/order.reducer.js"
 
 export function UserProfile() {
-
+  
   const orders = useSelector(storeState => storeState.orderModule.orders)
   // const user = JSON.parse(localStorage.getItem('user'))[0]
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
+  const dispatch = useDispatch()
   useEffect(() => {
+    // Add
+        socketService.on(SOCKET_EVENT_NEW_ORDER, order => {
+          console.log('new_order')
+          dispatch({type: ADD_ORDER,
+            order})
+     })
     const loggedInUser = userService.getLoggedinUser()
     if (loggedInUser) {    
       userService.getById(loggedInUser._id)
@@ -24,6 +32,10 @@ export function UserProfile() {
         })
     }
     // loadOrders(true)
+    return () => {
+      socketService.off(SOCKET_EVENT_NEW_ORDER)
+      
+  }
   }, [])
 
 
