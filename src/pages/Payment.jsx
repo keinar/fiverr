@@ -3,7 +3,6 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import { useParams } from "react-router"
 import { useNavigate } from "react-router"
 import { saveOrder } from "../store/actions/order.actions"
-import { ADD_ORDER } from "../store/reducers/order.reducer"
 
 export default function Payment() {
   const params = useParams()
@@ -14,11 +13,8 @@ export default function Payment() {
   const totalPrice = parseFloat(packageDetails.price) + 12.5
 
 
-
   async function onPayment() {
     try {
-      // Get buyer details from session storage
-      const buyerDetails = JSON.parse(sessionStorage.getItem("loggedinUser"))
       const orderDate = new Date().toISOString()
       // Constructing the gig object
       const gigTosave = {
@@ -47,7 +43,10 @@ export default function Payment() {
         status: "pending",
         orderDate: orderDate,
       }
-
+      if(!buyer) {
+        alert("you must login firstly!") 
+        throw new Error("buyer not found")
+      }
       // Save the order
       await saveOrder(order)
 
@@ -73,6 +72,7 @@ export default function Payment() {
     document.querySelector('[class="btn continue"]').style.backgroundColor = "black"
     document.querySelector('[class="btn continue"]').innerHTML = "Confirm & Pay"
   }
+
 
   return (
     <main className="full main-container">

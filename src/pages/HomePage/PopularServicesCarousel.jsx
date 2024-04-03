@@ -40,7 +40,7 @@ export default function PopularServicesCarousel() {
       href: "/explore?tags=Animated%20Explainer",
     },
     {
-      img: "https://res.cloudinary.com/de06koxrk/image/upload/v1710681616/Lancerr/animated-explainer-2x_xlunwv.webp",
+      img: "https://res.cloudinary.com/de06koxrk/image/upload/v1710681622/Lancerr/social-2x_aukb7c.webp",
       title: "Social Media",
       subtitle: "Reach more customers",
       href: "/explore?tags=Social%20Media",
