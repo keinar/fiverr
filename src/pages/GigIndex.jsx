@@ -30,13 +30,13 @@ export function GigIndex() {
         <Breadcrumbs filterBy={filterBy} />
 
         <h1 className="category-header"> {filterBy?.tags && filterBy.tags.length === 0 ? "Explore" : filterBy?.tags}</h1>
-        <div className="top-of-gigs">
+        {/* <div className="top-of-gigs">
           <div className="number-of-results">(Counter 1 from service)Num of services available</div>
           <label className="sort-container">
             <span className="sort-title">Add Filter Sort by:</span>
             <span className="drop-down-btn">Recommended</span>
           </label>
-        </div>
+        </div> */}
         <section>
           <GigList gigs={gigs} />
         </section>
