@@ -16,13 +16,56 @@ import { GigList } from "../cmps/GigList.jsx"
 import { GigPreview } from "../cmps/GigPreview.jsx"
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 
+
+
+
 export function UserProfile() {
   
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
 
   // const user = JSON.parse(localStorage.getItem('user'))[0]
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
+
+  function PrevArrow(props) {
+    const { onClick } = props;
+    return (
+      <div className="prev-arrow" onClick={onClick}>
+        <ArrowBackIos style={{ position: 'absolute', transform: 'translateY(-50%)' }} />
+      </div>
+    );
+  }
+  
+  function NextArrow(props) {
+    const { onClick } = props;
+    return (
+      <div className="next-arrow" onClick={onClick}>
+        <ArrowForwardIos style={{ position: 'absolute', transform: 'translateY(-50%)' }} />
+      </div>
+    );
+  }
+
+
+  const slickSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2, // Show only 1 slide at a time
+    slidesToScroll: 2, // Scroll 1 slide at a time
+    variableWidth: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  }
+  
   useEffect(() => {
     // Add
         socketService.on(SOCKET_EVENT_NEW_ORDER, order => {
@@ -50,7 +93,7 @@ export function UserProfile() {
   }, [])
 
 
-  const userGigs = gigs.filter((gig) => gig.owner._id === user._id);
+  // const userGigs = gigs.filter((gig) => gig.owner._id === user._id);
 
   if (!orders || !user) return <div>Loading..</div>
   return (
