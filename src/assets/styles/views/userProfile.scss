@@ -1,181 +1,488 @@
 @media (min-width : 600px) {
 
-    .main-container{
-        // display: flex;
-        .user-details-container {
-            gap: 6.25rem;
-            margin-top: 40px;
-          
-            .details-container {
-              flex-direction: column;
+  .cat-wrapper{
+    display: none !important;
+  }
+  .main-container {
+
+    // display: flex;
+    .user-details-container {
+      gap: 6.25rem;
+      margin-top: 40px;
+
+      .details-container {
+        flex-direction: column;
+        display: flex;
+        gap: 3.125rem;
+
+        .gigs-column {
+
+          .user-details-layout p {
+            padding-top: 35px;
+          }
+
+          .manage-orders {
+            display: flex;
+            flex-direction: column;
+
+            .order-header {
+              align-items: baseline;
+              padding-block-end: 14px;
+              justify-content: space-between;
+
+              h1 {
+                font-size: 18px;
+                font-weight: 600;
+              }
+            }
+
+            .order-list {
+              border: 0.5px solid #dadbdd;
+
+            }
+          }
+        }
+
+        .user-details {
+          width: 100%;
+
+          .user-card {
+            width: 100%;
+            flex-direction: row;
+            position: relative;
+            border: 0.5px solid #dadbdd;
+            padding: 1.875rem;
+            margin-block-start: 3.125rem;
+            font-size: .875rem;
+            line-height: 130%;
+            background-color: #fff;
+
+            h2 {
+              color: black;
+            }
+
+            h3 {
+              color: #62646a;
+            }
+
+            .user-profile-info {
+
               display: flex;
-              gap: 3.125rem;
+              flex-direction: column;
+              margin-bottom: 30px;
+              padding-bottom: 1.875rem;
+              gap: 1.25rem;
               align-items: center;
-          
-              .gigs-column {
-          
-                .user-details-layout p{
-                  padding-top: 35px;
-                }
-          
-                .manage-orders {
+              border-bottom: 0.5px solid #dadbdd;
+
+              .user-img img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+              }
+            }
+
+            .user-further-info {
+              ul {
+                padding: 0px;
+                margin-bottom: 0px;
+
+                li {
                   display: flex;
-                  flex-direction: column;
-          
-                  .order-header {
-                    align-items: baseline;
-                    padding-block-end: 14px;
-                    justify-content: space-between;
-          
-                    h1{
-                      font-size: 18px;
-                      font-weight: 600;
+                  flex-direction: row;
+                  justify-content: space-between;
+
+                  div {
+                    display: flex;
+                    align-items: center;
+
+                    .icon {
+                      margin-right: 5px;
+                      color: #62646a;
                     }
-                  }
-
-                  .order-list{
-                    border: 0.5px solid #dadbdd;
-
                   }
                 }
               }
-          
-              .user-details {
-                width: 100%;
-                .user-card {
-                  width: 100%;
-                  flex-direction: row;
-                  position: relative;
-                  border: 0.5px solid #dadbdd;
-                  padding: 1.875rem;
-                  margin-block-start: 3.125rem;
-                  font-size: .875rem;
-                  line-height: 130%;
-                  background-color: #fff;
+            }
 
-                  h2{
-                    color: black;
-                  }
-
-                  h3{
-                    color: #62646a;
-                  }
-          
-                  .user-profile-info{
-
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 30px;
-                    padding-bottom: 1.875rem;
-                    gap: 1.25rem;
-                    align-items: center;
-                    border-bottom: 0.5px solid #dadbdd;
-                    .user-img img{
-                      border-radius: 50%;
-                      width: 150px;
-                      height: 150px;
-                      object-fit: cover;
-                    }
-                  }
-
-                  .user-further-info{
-                    ul{
-                      padding: 0px;
-                      margin-bottom: 0px;
-                      li{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                      }
-                    }
-                  }
-                  .user-profile-label{
-                    display: flex;
+            .user-profile-label {
+              display: flex;
               flex-direction: column;
               align-items: center;
+            }
+          }
+        }
+
+        .user-gigs {
+          grid-area: ug;
+
+          .prev-arrow,
+          .next-arrow {
+            visibility: hidden;
+          }
+          .user-gig-list {
+            margin-top: 40px;
+            width: 100%;
+
+            .slick-slider {
+              width: 126.5vh;
+
+              .slick-list {
+                width: 100%;
+                padding: 10px;
+
+                .slick-track {
+                  .slick-slide {
+                    width: 331px !important;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    margin-right: 5px;
+                    padding: 5px;
+
+
+                    .img-container {
+                      flex: 1;
+                      width: 100%;
+                      margin-block-end: 1.4375rem;
+                    }
+
+                    .owner-details {
+                      display: flex;
+                      width: 100%;
+                      flex-direction: column;
+
+                      .owner-details-rate {
+                        span {
+                          padding-inline-start: 2px;
+                        }
+                      }
+
+                      .owner-details-header {
+                        display: flex;
+                        gap: 0.5rem;
+                        font-size: 14px;
+                      }
+
+                      .owner-details-gig-title {
+                        line-height: 0.8125rem;
+                        gap: 0.1875rem;
+                        align-items: center;
+                      }
+                    }
+
+                    .owner-gig-title {
+                      margin-top: 1.25rem;
+                      color: $clr3;
+                      display: -webkit-box;
+                      line-height: 1.6rem;
+                      margin-bottom: 0.5rem;
+                      font-weight: 400;
+                      min-height: 2.5em;
+                      font-size: 16px;
+
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+
+                    .gig-price {
+                      font-weight: 700;
+                      line-height: 1.5rem;
+                      margin-top: 0.5rem;
+                      margin-block-start: 0.5rem;
+                      font-size: 16px;
+                      color: $clr3;
+                    }
+
+                    .gig-img {
+                      object-fit: cover;
+                      width: 100%;
+                      aspect-ratio: 1.69/1;
+                      object-fit: cover;
+                      border-radius: 0.5em;
+                      cursor: pointer;
+
+                      img {
+                        border-radius: 8px;
+                      }
+                    }
+
+                    .owner-rate {
+                      font-weight: 700;
+                    }
+
+                    .owner-number-rates {
+                      color: $clr9;
+                    }
+
+                    .owner-profile-img {
+                      border-radius: 50%;
+                      cursor: pointer;
+                      width: 1.5em;
+                    }
+
+                    .owner-fullname {
+                      font-weight: 700;
+                      line-height: 1.3125rem;
+                      cursor: pointer;
+                    }
+
+                    .level-number {
+                      margin-left: auto;
+                      font-weight: 600;
+                      line-height: 1.3125rem;
+                    }
                   }
                 }
               }
             }
           }
-
+        }
+      }
     }
 
-    
+  }
+
+
 }
 
 @media (min-width : 900px) {
 
-  .main-container{
+  .main-container {
     .user-details-container {
-        gap: 6.25rem;
-        margin-top: 40px;
-      
-        .details-container {
-          flex-direction: row;
-          display: flex;
-          gap: 3.125rem;
-      
-          .gigs-column {
-      
-            .user-details-layout p{
-              padding-top: 50px;
-            }
-      
-            .manage-orders {
-              display: flex;
-              flex-direction: column;
-      
-              .order-header {
-                align-items: baseline;
-                padding-block-end: 14px;
-                justify-content: space-between;
-      
-                h1{
-                  font-size: 18px;
-                  font-weight: 600;
-                }
+      gap: 6.25rem;
+      margin-top: 40px;
+
+      .details-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto auto;
+        grid-template-areas: "ud ug";
+
+
+        gap: 3.125rem;
+
+        .gigs-column {
+
+          .user-details-layout p {
+            padding-top: 50px;
+          }
+
+          .manage-orders {
+            display: flex;
+            flex-direction: column;
+
+            .order-header {
+              align-items: baseline;
+              padding-block-end: 14px;
+              justify-content: space-between;
+              margin-bottom: 7px;
+
+              h1 {
+                font-size: 18px;
+                font-weight: 600;
               }
             }
           }
-      
-          .user-details {
-            .user-card {
-              flex-direction: row;
-              width: 25rem;
-              position: relative;
-              border: 1px solid #dadbdd;
-              padding: 1.875rem;
-              margin-block-start: 3.125rem;
-              min-width: 300px;
-              font-size: .875rem;
-              line-height: 130%;
-              color: #62646a;
-              background-color: #fff;
-      
-              .user-profile-info{
-                display: flex;
-                flex-direction: column;
-                gap: 1.25rem;
-                align-items: center;
-                .user-img img{
-                  border-radius: 50%;
-                  width: 150px;
-                  height: 150px;
-                  object-fit: cover;
-                }
+        }
+
+        .user-details {
+          position: relative;
+          grid-area: ud;
+          grid-row: 1;
+
+          .user-card {
+            flex-direction: row;
+            width: 25rem;
+            position: relative;
+            border: 1px solid #dadbdd;
+            padding: 1.875rem;
+            margin-block-start: 3.125rem;
+            min-width: 300px;
+            font-size: .875rem;
+            line-height: 130%;
+            color: #62646a;
+            background-color: #fff;
+
+            .user-profile-info {
+              display: flex;
+              flex-direction: column;
+              gap: 1.25rem;
+              align-items: center;
+
+              .user-img img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
               }
-              .user-profile-label{
-                display: flex;
-          flex-direction: column;
-          align-items: center;
+            }
+
+            .user-profile-label {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        }
+
+        .next-arrow{
+          left: 100%;
+          top: 30%;
+        }
+
+        .prev-arrow{
+          top:30%
+        }
+
+        .prev-arrow,
+        .next-arrow {
+          position: absolute;
+          transform: translateY(-50%);
+          visibility: visible !important;
+        }
+
+        .user-gigs {
+          grid-area: ug;
+
+          .user-gig-list {
+            margin-top: 40px;
+            width: 100%;
+            
+            .slick-slider {
+              display: flex;
+              flex-direction: row;
+              width: 92.5vh;
+              margin-top: 20px;
+              
+              .slick-dots {
+                visibility: hidden;
+              }
+              .slick-list {
+                width: 100%;
+                padding: 10px;
+
+                .slick-track {
+                  .slick-slide {
+                    width: 431px !important;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    margin-right: 5px;
+                    padding: 5px;
+
+
+                    .img-container {
+                      flex: 1;
+                      width: 100%;
+                      margin-block-end: 1.4375rem;
+                    }
+
+                    .owner-details {
+                      display: flex;
+                      width: 100%;
+                      flex-direction: column;
+
+                      .owner-details-rate {
+                        span {
+                          padding-inline-start: 2px;
+                        }
+                      }
+
+                      .owner-details-header {
+                        display: flex;
+                        gap: 0.5rem;
+                        font-size: 14px;
+                      }
+
+                      .owner-details-gig-title {
+                        line-height: 0.8125rem;
+                        gap: 0.1875rem;
+                        align-items: center;
+                      }
+                    }
+
+                    .owner-gig-title {
+                      margin-top: 1.25rem;
+                      color: $clr3;
+                      display: -webkit-box;
+                      line-height: 1.6rem;
+                      margin-bottom: 0.5rem;
+                      font-weight: 400;
+                      min-height: 2.5em;
+                      font-size: 16px;
+
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                    }
+
+                    .gig-price {
+                      font-weight: 700;
+                      line-height: 1.5rem;
+                      margin-top: 0.5rem;
+                      margin-block-start: 0.5rem;
+                      font-size: 16px;
+                      color: $clr3;
+                    }
+
+                    .gig-img {
+                      object-fit: cover;
+                      width: 100%;
+                      aspect-ratio: 1.69/1;
+                      object-fit: cover;
+                      border-radius: 0.5em;
+                      cursor: pointer;
+
+                      img {
+                        border-radius: 8px;
+                      }
+                    }
+
+                    .owner-rate {
+                      font-weight: 700;
+                    }
+
+                    .owner-number-rates {
+                      color: $clr9;
+                    }
+
+                    .owner-profile-img {
+                      border-radius: 50%;
+                      cursor: pointer;
+                      width: 1.5em;
+                    }
+
+                    .owner-fullname {
+                      font-weight: 700;
+                      line-height: 1.3125rem;
+                      cursor: pointer;
+                    }
+
+                    .level-number {
+                      margin-left: auto;
+                      font-weight: 600;
+                      line-height: 1.3125rem;
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
 
+      .gigs-column user-details-layout {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
   }
 
-  
+
 }

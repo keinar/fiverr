@@ -38,7 +38,7 @@ export function AppHeader() {
         </header>
       </section>
       {location.pathname !== "/order" && (
-        <div className={`cat-wrapper ${location.pathname === "/" && "fixed"} full ${location.pathname === "/" ? (showCategoriesMenu ? "visible" : "") : "visible"} `}>
+        <div className={`cat-wrapper ${location.pathname === "/" && "fixed"} full ${location.pathname === "/profile" ? (showCategoriesMenu ? "visible" : "") : "visible"} `}>
           <GigFilter />
         </div>
       )}
