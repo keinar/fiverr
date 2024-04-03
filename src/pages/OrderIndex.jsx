@@ -1,16 +1,18 @@
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch,useSelector } from "react-redux"
 // import { GigList } from "../cmps/GigList.jsx"
 import { loadOrders } from "../store/actions/order.actions.js"
 // import { GigFilter } from "../cmps/GigFilter.jsx"
 // import { useSearchParams } from "react-router-dom"
 import { store } from "../store/store.js"
 import { Link } from "react-router-dom"
+import { socketService, SOCKET_EVENT_ORDER_UPDATED } from "../services/socket.service.js"
+import {UPDATE_ORDER} from "../store/reducers/order.reducer.js"
 
 export function OrderIndex() {
   // const [searchParams, setSearchParams] = useSearchParams(store.getState().orderModule.filterBy)
   const orders = useSelector(storeState => storeState.orderModule.orders)
-
+  const dispatch = useDispatch() 
   // const filterBy = useSelector(storeState => storeState.orderModule.filterBy)
 
   // useEffect(() => {
@@ -19,9 +21,20 @@ export function OrderIndex() {
 
   useEffect(() => {
     // Sanitize filterBy
+    // Update
+    socketService.on(SOCKET_EVENT_ORDER_UPDATED, order => {
+      dispatch({
+        type: UPDATE_ORDER,
+        order
+      })
+    })
+
 
     loadOrders()
+    return () => {
+      socketService.off(SOCKET_EVENT_ORDER_UPDATED)
 
+    }
     // setSearchParams(filterBy)
   }, [])
 

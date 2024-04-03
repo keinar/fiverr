@@ -1,9 +1,10 @@
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import {  useDispatch,useSelector } from "react-redux"
 import { loadOrders } from "../store/actions/order.actions.js"
 import { SellerOrdersList } from "../cmps/SellerOrderList.jsx"
 import { useState } from "react"
-import Slider from "react-slick"
+import { socketService, SOCKET_EVENT_NEW_ORDER } from "../services/socket.service.js"
+import {ADD_ORDER} from "../store/reducers/order.reducer.js"import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -15,52 +16,19 @@ import { GigPreview } from "../cmps/GigPreview.jsx"
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 export function UserProfile() {
-
+  
   const orders = useSelector(storeState => storeState.orderModule.orders)
   const gigs = useSelector(storeState => storeState.gigModule.gigs)
 
   // const user = JSON.parse(localStorage.getItem('user'))[0]
   const [user, setUser] = useState(null);
-
-  function PrevArrow(props) {
-    const { onClick } = props;
-    return (
-      <div className="prev-arrow" onClick={onClick}>
-        <ArrowBackIos style={{ position: 'absolute', transform: 'translateY(-50%)' }} />
-      </div>
-    );
-  }
-  
-  function NextArrow(props) {
-    const { onClick } = props;
-    return (
-      <div className="next-arrow" onClick={onClick}>
-        <ArrowForwardIos style={{ position: 'absolute', transform: 'translateY(-50%)' }} />
-      </div>
-    );
-  }
-
-
-  const slickSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 2, // Show only 1 slide at a time
-    slidesToScroll: 2, // Scroll 1 slide at a time
-    variableWidth: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    responsive: [
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      }
-    ]
-  };
   useEffect(() => {
+    // Add
+        socketService.on(SOCKET_EVENT_NEW_ORDER, order => {
+          console.log('new_order')
+          dispatch({type: ADD_ORDER,
+            order})
+     })
     const loggedInUser = userService.getLoggedinUser()
     if (loggedInUser) {
       userService.getById(loggedInUser._id)
@@ -74,6 +42,10 @@ export function UserProfile() {
         })
     }
     // loadOrders(true)
+    return () => {
+      socketService.off(SOCKET_EVENT_NEW_ORDER)
+      
+  }
   }, [])
 
 
