@@ -4,16 +4,17 @@ import { loadOrders } from "../store/actions/order.actions.js"
 import { SellerOrdersList } from "../cmps/SellerOrderList.jsx"
 import { useState } from "react"
 import { socketService, SOCKET_EVENT_NEW_ORDER } from "../services/socket.service.js"
-import {ADD_ORDER} from "../store/reducers/order.reducer.js"import Slider from "react-slick"
+import {ADD_ORDER} from "../store/reducers/order.reducer.js"
+import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PersonIcon from '@mui/icons-material/Person';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import DeliveryIcon from '@mui/icons-material/LocalShipping';
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import PersonIcon from '@mui/icons-material/Person'
+import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import DeliveryIcon from '@mui/icons-material/LocalShipping'
 import { GigList } from "../cmps/GigList.jsx"
 import { GigPreview } from "../cmps/GigPreview.jsx"
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 
 export function UserProfile() {
   
