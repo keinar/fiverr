@@ -8,16 +8,12 @@ export function GetFlagImage(country) {
       return "https://res.cloudinary.com/de06koxrk/image/upload/v1711915732/Lancerr/thailand_kjiznu.png"
     case "Germany":
       return "https://res.cloudinary.com/de06koxrk/image/upload/v1711915723/Lancerr/germany_cp0zek.png"
-    case "United Kingdom":
-      return "https://res.cloudinary.com/de06koxrk/image/upload/v1711915713/Lancerr/uk_mtc9vs.png"
     case "United States":
       return "https://res.cloudinary.com/de06koxrk/image/upload/v1711915716/Lancerr/usa_l9bkto.png"
     case "Netherlands":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png"
     case "Canada":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e7-1f1e6.png"
-    case "Australia":
-      return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e6-1f1fa.png"
     case "India":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png"
     case "Japan":
@@ -52,20 +48,14 @@ export function GetFlagImage(country) {
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png"
     case "Czech Republic":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1ff.png"
-    case "Croatia":
-      return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1f7.png"
     case "Hungary":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1fa.png"
     case "Slovenia":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f8-1f1f1.png"
     case "United Kingdom":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png"
-    case "United States":
-      return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
     case "Australia":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e6-1f1fa.png"
-    case "Netherlands":
-      return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png"
     case "Finland":
       return "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1eb-1f1ee.png"
     case "Ireland":
