@@ -251,6 +251,7 @@ svg.lucide.lucide-search {
     li {
       padding: 8px 10px;
       color: $clr4;
+      border-bottom: 3px solid transparent;
       &:hover {
         border-bottom: 3px solid $clr1;
         cursor: pointer;
