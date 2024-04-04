@@ -11,6 +11,7 @@ export default function Payment() {
   const gig = useSelector(storeState => storeState.gigModule.gigs.find(gig => gig._id == params.gigId))
   const packageDetails = gig.packages[packageType]
   const totalPrice = parseFloat(packageDetails.price) + 12.5
+  const buyer = useSelector(storeState => storeState.userModule.user)
 
 
   async function onPayment() {
