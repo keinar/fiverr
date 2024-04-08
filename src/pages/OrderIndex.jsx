@@ -42,6 +42,16 @@ export function OrderIndex() {
   //   fieldsToUpdate = { ...filterBy, ...fieldsToUpdate }
   //   setFilterBy(fieldsToUpdate)
   // }
+
+  function getImages(gig) {
+    if(Array.isArray(gig.imgUrl)) {
+      // It's an array
+      return gig.imgUrl[0]
+    } else if(typeof gig.imgUrl === 'string') {
+      // It's a string
+      return [gig.imgUrl]
+    }
+  }
   if (!orders) return <div>Loading..</div>
 
   return (
@@ -79,7 +89,7 @@ export function OrderIndex() {
                     </div>
                     <div className="gig flex">
                       <div className="gig-img">
-                        <img src={order.gig.imgUrl} alt="Gig Picture" />
+                        <img src={getImages(order.gig)} alt="Gig Picture" />
                       </div>
                       <div className="gig-info">
                         <h4 className="gig-title">{order.gig.title}</h4>

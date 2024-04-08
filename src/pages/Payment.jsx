@@ -21,6 +21,7 @@ export default function Payment() {
       const buyerDetails = JSON.parse(sessionStorage.getItem("loggedinUser"))
       const orderDate = new Date().toISOString()
       // Constructing the gig object
+      
       const gigTosave = {
         _id: gig._id,
         tags: gig.tags,
@@ -58,6 +59,16 @@ export default function Payment() {
     }
   }
 
+  function getImages() {
+    if(Array.isArray(gig.imgUrl)) {
+      // It's an array
+      return gig.imgUrl[0]
+    } else if(typeof gig.imgUrl === 'string') {
+      // It's a string
+      return [gig.imgUrl]
+    }
+  }
+
   if (!gig) {
     return <div>Loading...</div>
   }
@@ -80,7 +91,7 @@ export default function Payment() {
         <section className="order-details-container">
           <article className="call-to-action buyer">
             <figure className="preview-container">
-              <img src={gig.imgUrl} alt="Selected gig image preview" />
+              <img src={getImages()} alt="Selected gig image preview" />
               <span className="package-desc">{gig.title}</span>
             </figure>
             <section className="package-heading">
